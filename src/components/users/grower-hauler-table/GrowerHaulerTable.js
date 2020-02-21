@@ -7,32 +7,44 @@ import { Table } from "reactstrap";
 function GrowerHaulerTable(props) {
   return (
     <div>
-      <Table bordered>
+      <Table bordered id="list-table">
         <thead></thead>
         <tbody>
           <tr>
-            <th scope="row">Account Id</th>
-            <td>H-4535354</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row" className="p-4">
+              Account Id
+            </th>
+            <td className="p-4">H-4535354</td>
           </tr>
           <tr>
-            <th scope="row">Account Name</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th scope="row" className="p-4">
+              Account Name
+            </th>
+            <td className="p-4">Jacob</td>
           </tr>
           <tr>
-            <th scope="row">Type</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <th scope="row" className="p-4">
+              Type
+            </th>
+            <td className="p-4">Larry</td>
           </tr>
           <tr>
-            <th scope="row">Email</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <th scope="row" className="p-4">
+              Email
+            </th>
+            <td className="p-4">Larry</td>
+          </tr>
+          <tr>
+            <th scope="row" className="p-4">
+              Phone Number
+            </th>
+            <td className="p-4">Larry</td>
+          </tr>
+          <tr>
+            <th scope="row" className="p-4">
+              Hauler / Grower
+            </th>
+            <td className="p-3">Larry</td>
           </tr>
         </tbody>
       </Table>

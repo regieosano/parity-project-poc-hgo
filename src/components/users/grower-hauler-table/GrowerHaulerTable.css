@@ -1,5 +1,9 @@
-.list-table {
-    margin-top: 2rem;
-    margin-left: 2rem;
-
+#list-table {
+    /* margin-left: 2rem; */
+    /* table-layout: fixed; */
+    width: 30rem;
 }
+
+/* td {
+    padding-top: 2rem;
+} */

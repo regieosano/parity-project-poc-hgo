@@ -4,6 +4,8 @@ import { Container, Row, Col } from "reactstrap";
 
 import "./App.css";
 
+import Xcomp from "./xcomp/Xcomp";
+
 import NavBar from "./navbar/NavBar";
 import SideBar from "./mainsidebar/MainSideBar";
 import XMenuCategory from "./mainview/XMenuCategory";
@@ -13,7 +15,7 @@ import GrowerHaulerTable from "./users/grower-hauler-table/GrowerHaulerTable";
 function App(props) {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar />
       <SideBar />
 
       <Container>
@@ -21,7 +23,8 @@ function App(props) {
           xTitle="Grower / Hauler Detail View"
           xTable={<GrowerHaulerTable />}
         />
-      </Container>
+      </Container> */}
+      <Xcomp />
     </div>
   );
 }
