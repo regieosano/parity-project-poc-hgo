@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Sidebar.css";
+import "./MainSidebar.css";
 
 function SideBar(props) {
   const toggleSideBar = () => {};

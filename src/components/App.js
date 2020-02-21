@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 import "./App.css";
 
 import NavBar from "./navbar/NavBar";
-import SideBar from "./sidebar/SideBar";
+import SideBar from "./mainsidebar/MainSideBar";
 import XMenuCategory from "./mainview/XMenuCategory";
 
 import GrowerHaulerTable from "./users/grower-hauler-table/GrowerHaulerTable";
@@ -14,7 +14,7 @@ function App(props) {
   return (
     <div>
       <NavBar />
-      {/* <SideBar />  Properties would define the Table */}
+      <SideBar />
 
       <Container>
         <XMenuCategory
