@@ -15,14 +15,19 @@
     /* color: #fff; */
     color: white;
     list-style: none;
-    padding: 30px 10px;
+    padding: 20px 10px;
     border-bottom: 1px solid rgba(120, 90, 100, 11);
 
 }
 
 .dropdown {
-    height: 30px;
+    width: 100%;
+    height: 4rem;
+    text-align: left;
+
 }
+
+
 
 /* #mainsidebar ul li:hover {
     cursor: pointer;

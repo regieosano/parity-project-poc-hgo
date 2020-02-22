@@ -1,6 +1,7 @@
 import React from "react";
 
 import {
+  ButtonGroup,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -9,33 +10,102 @@ import {
 
 import "./MainSidebar.css";
 
-function SideBar(props) {
-  const toggleSideBar = () => {};
-
+function MainSideBar({ onHandleToggleModal }) {
   return (
     <div id="mainsidebar">
       <ul>
-        <li>DASHBOARD</li>
-        <li>RECEIVING</li>
-        <li>QUALITY</li>
-        <li>DELIVERIES</li>
-        <li>PAYMENTS</li>
         <li>
           {" "}
           <UncontrolledDropdown>
-            <DropdownToggle className="dropdown" color="brown">
-              USERS
+            <DropdownToggle className="dropdown">
+              <span className="dropDownText">DASHBOARD</span>
             </DropdownToggle>
-            <DropdownMenu>
+            <DropdownMenu right>
+              <DropdownItem>Dropdown 1</DropdownItem>
+              <DropdownItem>Dropdown 2</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </li>
+
+        <li>
+          {" "}
+          <UncontrolledDropdown>
+            <DropdownToggle className="dropdown">
+              <span className="dropDownText">RECEIVING</span>
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>Dropdown 1</DropdownItem>
+              <DropdownItem>Dropdown 2</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </li>
+
+        <li>
+          {" "}
+          <UncontrolledDropdown>
+            <DropdownToggle className="dropdown">
+              <span className="dropDownText">QUALITY</span>
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>Dropdown 1</DropdownItem>
+              <DropdownItem>Dropdown 2</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </li>
+
+        <li>
+          {" "}
+          <UncontrolledDropdown>
+            <DropdownToggle className="dropdown">
+              <span className="dropDownText">DELIVERIES</span>
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>Dropdown 1</DropdownItem>
+              <DropdownItem>Dropdown 2</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </li>
+
+        <li>
+          {" "}
+          <UncontrolledDropdown>
+            <DropdownToggle className="dropdown">
+              <span className="dropDownText">PAYMENTS</span>
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>Dropdown 1</DropdownItem>
+              <DropdownItem>Dropdown 2</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </li>
+        <li>
+          {" "}
+          <UncontrolledDropdown>
+            <DropdownToggle className="dropdown">
+              <span className="dropDownText">USERS</span>
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem onClick={onHandleToggleModal}>Grower</DropdownItem>
+              <DropdownItem>Hauler</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </li>
+
+        <li>
+          {" "}
+          <UncontrolledDropdown>
+            <DropdownToggle className="dropdown">
+              <span className="dropDownText">SETTINGS</span>
+            </DropdownToggle>
+            <DropdownMenu right>
               <DropdownItem>Grower</DropdownItem>
               <DropdownItem>Hauler</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </li>
-        <li>SETTINGS</li>
       </ul>
     </div>
   );
 }
 
-export default SideBar;
+export default MainSideBar;
