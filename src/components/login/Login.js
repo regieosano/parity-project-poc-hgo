@@ -73,13 +73,13 @@ function Login(props) {
                     <FormGroup>
                       <Input
                         type="email"
-                        placeholder="Email"
+                        placeholder="📩     Email"
                         className="loginMargins"
                         onChange={e => setEmailInput(e.target.value)}
                       />
                       <Input
                         type="password"
-                        placeholder="Password"
+                        placeholder="🔑     Password"
                         className="loginMargins"
                         onChange={e => setPassWordInput(e.target.value)}
                       />
