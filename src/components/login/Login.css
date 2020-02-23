@@ -1,0 +1,33 @@
+#loginTitle {
+  font-size: larger;
+  color: #fff;
+}
+
+#cardElemLogin {
+  margin-top: 15rem;
+}
+
+#registerFormat {
+  margin-top: 0.5rem;
+  color: #fff;
+}
+
+#registerFormat:hover {
+  cursor: pointer;
+  padding: 0.1rem;
+  color: #000;
+  background: #cecece;
+}
+
+.loginTitle {
+  text-align: center;
+}
+
+.loginMargins {
+  margin-top: 1rem;
+}
+
+.forgotPassword {
+  background-color: rgb(223, 236, 236);
+  font-size: smaller;
+}

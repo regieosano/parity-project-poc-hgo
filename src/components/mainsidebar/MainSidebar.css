@@ -12,11 +12,11 @@
 }
 
 #mainsidebar ul li {
-    /* color: #fff; */
-    color: white;
+    color: #fff;
     list-style: none;
     padding: 20px 10px;
-    border-bottom: 1px solid rgba(120, 90, 100, 11);
+    border-bottom: 1px solid rgba(0, 128, 0);
+    ;
 
 }
 
@@ -28,16 +28,7 @@
 }
 
 
-
-/* #mainsidebar ul li:hover {
-    cursor: pointer;
-    color: rgb(48, 46, 46);
-    background-color: #cecece;
-} */
-
-
-
 #mainsidebar ul li:first-child {
-    border-top: 1px solid rgba(120, 90, 100, 11);
+    border-top: 1px solid rgba(0, 128, 0);
 
 }

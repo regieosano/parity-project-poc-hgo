@@ -1,31 +1,36 @@
 import React, { useState } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
-import { FormGroup, Input } from "reactstrap";
+import { Navbar, NavbarBrand, Form } from "reactstrap";
+import { Button, FormGroup, Input } from "reactstrap";
 
-import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import { faIndustry } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./NavBar.css";
 
 const NavBar = props => {
-  const welcomeIcon = (
-    <FontAwesomeIcon icon={faDoorOpen} size={"2x"} color={"brown"} />
+  const searchIcon = <FontAwesomeIcon icon={faSearch} />;
+  const industryIcon = (
+    <FontAwesomeIcon icon={faIndustry} size={"2x"} color={"Cyan"} />
   );
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#036b1d" }}>
+      <Navbar style={{ backgroundColor: "#036b1d" }} id="navbar">
         <NavbarBrand>
-          <span>{welcomeIcon}&nbsp;&nbsp;Welcome, HGO User</span>
+          <span>{industryIcon}&nbsp;&nbsp;Welcome, HGO User</span>
         </NavbarBrand>
-        <FormGroup>
-          <Input
-            type="search"
-            name="search"
-            id="searchBox"
-            placeholder="Type to search"
-          />
-        </FormGroup>
+        <Form inline>
+          <FormGroup>
+            <Input
+              type="search"
+              name="search"
+              className="searchBox"
+              placeholder="Type to search"
+            />
+          </FormGroup>
+          <Button className="searchBox"> {searchIcon}</Button>
+        </Form>
       </Navbar>
     </div>
   );

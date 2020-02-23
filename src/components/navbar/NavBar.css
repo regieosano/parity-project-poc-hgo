@@ -1,9 +1,9 @@
 span {
   margin-top: 3rem;
-  color: white;
-  font-size: larger;
+  color: #fff;
+  font-weight: 500;
 }
 
-#searchBox {
-  margin-top: 1rem;
-}
+/* #navbar {
+  border-bottom: 1px solid rgba(0, 128, 0);
+} */

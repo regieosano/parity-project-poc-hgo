@@ -5,11 +5,11 @@ import NavBar from "../navbar/NavBar";
 import MainSideBar from "../mainsidebar/MainSideBar";
 import XMenuCategory from "../mainview/XMenuCategory";
 import InnerSideBar from "../innersidebar/InnerSideBar";
-import GrowerHaulerDetailViewModal from "../modals/GrowerHaulerDetailViewModal";
+import GrowerHaulerDetailView from "../grower-hauler-detail/GrowerHaulerDetailView";
 
 import GrowerHaulerTable from "../users/grower-hauler-table/GrowerHaulerTable";
 
-function Xcomp(props) {
+function XComp(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onHandleToggleModal = () => {
@@ -30,7 +30,7 @@ function Xcomp(props) {
 
         <Col>
           <Row xs="1">
-            <GrowerHaulerDetailViewModal
+            <GrowerHaulerDetailView
               isModalOpen={isModalOpen}
               onHandleToggleModal={onHandleToggleModal}
             />
@@ -41,4 +41,4 @@ function Xcomp(props) {
   );
 }
 
-export default Xcomp;
+export default XComp;
