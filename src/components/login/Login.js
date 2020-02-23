@@ -30,6 +30,9 @@ function Login(props) {
       })
       .then(response => {
         console.log(response.data);
+        props.history.push(`/growerhaulerdetail`, {
+          majestic: response.data
+        });
       })
       .catch(error => {
         alert("Invalid Credentials");
