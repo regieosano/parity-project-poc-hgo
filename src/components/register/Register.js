@@ -10,21 +10,21 @@ function Register({ isModalOpen, onHandleToggleModal }) {
   const modalBody = (
     <Form>
       <FormGroup>
-        <Label for="lastName">Lastname</Label>
+        <Label for="accountId">Account Id</Label>
         <Input
           type="text"
-          name="lastName"
-          id="lastName"
-          placeholder="Enter lastname"
+          name="accountId"
+          id="accountId"
+          placeholder="Enter Account Id"
         />
       </FormGroup>
       <FormGroup>
-        <Label for="firstName">Firstname</Label>
+        <Label for="accountName">Account Name</Label>
         <Input
           type="text"
-          name="firstName"
-          id="firstName"
-          placeholder="Enter firstname"
+          name="accountName"
+          id="accountName"
+          placeholder="Enter Account Name"
         />
       </FormGroup>
       <FormGroup>
@@ -55,8 +55,12 @@ function Register({ isModalOpen, onHandleToggleModal }) {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="memberType">Member Type</Label>
-        <Input type="select" name="memberType">
+        <Label for="type">Type</Label>
+        <Input type="text" name="type" id="type" placeholder="Enter type" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="growerHauler">Grower/Hauler</Label>
+        <Input type="select" name="growerHauler">
           <option>Grower</option>
           <option>Hauler</option>
         </Input>
