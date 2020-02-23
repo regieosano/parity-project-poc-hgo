@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Container } from "reactstrap";
 
 import NavBar from "../navbar/NavBar";
@@ -11,6 +11,11 @@ import GrowerHaulerTable from "../users/grower-hauler-table/GrowerHaulerTable";
 
 function XComp(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const supreme = props.location["state"];
+    console.log(supreme.majestic["data"]);
+  }, []);
 
   const onHandleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
