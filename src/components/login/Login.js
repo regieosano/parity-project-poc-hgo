@@ -10,7 +10,7 @@ import Register from "../register/Register";
 
 import "./Login.css";
 
-function Login() {
+function Login(props) {
   // Initialize the states
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [emailInput, setEmailInput] = useState("");
@@ -32,7 +32,7 @@ function Login() {
         console.log(response.data);
       })
       .catch(error => {
-        console.log(error);
+        alert("Invalid Credentials");
       });
   };
 
