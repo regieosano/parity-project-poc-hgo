@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./NavBar.css";
 
-const NavBar = props => {
+const NavBar = ({ memberName }) => {
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
   const industryIcon = (
     <FontAwesomeIcon icon={faIndustry} size={"2x"} color={"Cyan"} />
@@ -18,7 +18,9 @@ const NavBar = props => {
     <div>
       <Navbar style={{ backgroundColor: "#036b1d" }} id="navbar">
         <NavbarBrand>
-          <span>{industryIcon}&nbsp;&nbsp;Welcome, HGO User</span>
+          <span>
+            {industryIcon}&nbsp;&nbsp;Welcome, {memberName}
+          </span>
         </NavbarBrand>
         <Form inline>
           <FormGroup>

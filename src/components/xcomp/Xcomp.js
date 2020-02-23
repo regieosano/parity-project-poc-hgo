@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Container } from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 import NavBar from "../navbar/NavBar";
 import MainSideBar from "../mainsidebar/MainSideBar";
-import XMenuCategory from "../mainview/XMenuCategory";
-import InnerSideBar from "../innersidebar/InnerSideBar";
 import GrowerHaulerDetailView from "../grower-hauler-detail/GrowerHaulerDetailView";
-
-import GrowerHaulerTable from "../users/grower-hauler-table/GrowerHaulerTable";
 
 function XComp(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [memberName, setMemberName] = useState("");
+
   useEffect(() => {
     const supreme = props.location["state"];
-    console.log(supreme.majestic["data"]);
+    const mFName = supreme.majestic.member.firstName;
+    const mLName = supreme.majestic.member.lastName;
+    setMemberName(`${mFName} ${mLName}`);
   }, []);
 
   const onHandleToggleModal = () => {
@@ -25,7 +25,7 @@ function XComp(props) {
     <div>
       <Row xs="1">
         <Col>
-          <NavBar />
+          <NavBar memberName={memberName} />
         </Col>
       </Row>
       <Row xs="2">

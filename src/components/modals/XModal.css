@@ -1,10 +1,10 @@
 #modalRegister {
-    margin-top: 7rem;
+  margin-top: 7rem;
 }
 
-#registerTitle {
-    /* background-color: #036b1d; */
-    color: #000;
-    text-align: center;
-    padding: 1rem;
+#modalTitle {
+  /* background-color: #036b1d; */
+  color: #000;
+  text-align: center;
+  padding: 1rem;
 }

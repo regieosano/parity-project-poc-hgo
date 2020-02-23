@@ -73,7 +73,7 @@ function Register({ isModalOpen, onHandleToggleModal }) {
           onHandleToggleModal={onHandleToggleModal}
           modalSize={"md"}
           modalTitle={"Register"}
-          modalId={"registerTitle"}
+          modalId={"modalTitle"}
           buttonHappyText={"Submit"}
           buttonSadText={"Cancel"}
         />

@@ -47,10 +47,15 @@ module.exports = {
 
   stats: { children: false },
 
+  output: {
+    publicPath: "/"
+  },
+
   // Set dev-server configuration
   devServer: {
     inline: true,
     contentBase: "./dist",
-    port: 5500
+    port: 5500,
+    historyApiFallback: true
   }
 };
