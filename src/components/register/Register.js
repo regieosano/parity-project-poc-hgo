@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Register.css";
 
@@ -6,14 +6,7 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 
 import XModal from "../modals/XModal";
 
-function Register({ isModalOpen, onHandleToggleModal }) {
-  const [accountName, setAccountName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [address, setAddress] = useState("");
-  const [type, setType] = useState("");
-  const [growler_hauler, setGrowlerHauler] = useState("");
-
+function Register({ isModalOpen, onHandleToggleModal, handleOnInputChange }) {
   const modalBody = (
     <Form>
       <FormGroup>
@@ -23,7 +16,7 @@ function Register({ isModalOpen, onHandleToggleModal }) {
           name="accountName"
           id="accountName"
           placeholder="Enter Account Name"
-          onChange={e => setAccountName(e.target.value)}
+          onChange={handleOnInputChange}
         />
       </FormGroup>
       <FormGroup>
@@ -33,7 +26,7 @@ function Register({ isModalOpen, onHandleToggleModal }) {
           name="email"
           id="email"
           placeholder="Enter email address"
-          onChange={e => setEmail(e.target.value)}
+          onChange={handleOnInputChange}
         />
       </FormGroup>
       <FormGroup>
@@ -43,7 +36,7 @@ function Register({ isModalOpen, onHandleToggleModal }) {
           name="password"
           id="password"
           placeholder="Enter your password"
-          onChange={e => setPassword(e.target.value)}
+          onChange={handleOnInputChange}
         />
       </FormGroup>
       <FormGroup>
@@ -53,7 +46,7 @@ function Register({ isModalOpen, onHandleToggleModal }) {
           name="address"
           id="address"
           placeholder="Enter address"
-          onChange={e => setAddress(e.target.value)}
+          onChange={handleOnInputChange}
         />
       </FormGroup>
       <FormGroup>
@@ -63,15 +56,12 @@ function Register({ isModalOpen, onHandleToggleModal }) {
           name="type"
           id="type"
           placeholder="Enter type"
-          onChange={e => setType(e.target.value)}
+          onChange={handleOnInputChange}
         />
       </FormGroup>
       <FormGroup>
         <Label for="growerHauler">Grower/Hauler</Label>
-        <Input
-          type="select"
-          name="growerHauler"
-          onChange={e => setGrowlerHauler(e.target.value)}>
+        <Input type="select" name="growerHauler" onChange={handleOnInputChange}>
           <option>Grower</option>
           <option>Hauler</option>
         </Input>

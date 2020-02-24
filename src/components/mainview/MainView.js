@@ -6,7 +6,42 @@ import Login from "../login/Login";
 import Register from "../register/Register";
 
 function MainView(props) {
+  // Initialize states
   const [isModalOpen, setIsModalOpen] = useState(false);
+  //   const [accountName, setAccountName] = useState("");
+  //   const [email, setEmail] = useState("");
+  //   const [password, setPassword] = useState("");
+  //   const [address, setAddress] = useState("");
+  //   const [type, setType] = useState("");
+  //   const [growler_hauler, setGrowlerHauler] = useState("");
+
+  let accountName = "";
+  let email = "";
+  let password = "";
+  let address = "";
+  let type = "";
+  let grower_hauler = "";
+
+  const handleOnInputChange = e => {
+    const eventName = e.target.name;
+    const eventValue = e.target.value;
+    switch (eventName) {
+      case "accountName":
+        accountName = eventValue;
+        break;
+      case "email":
+        email = eventValue;
+        break;
+      case "password":
+        password = eventValue;
+      case "address":
+        address = eventValue;
+      case "type":
+        type = eventValue;
+      case "grower_hauler":
+        grower_hauler = eventValue;
+    }
+  };
 
   // Handle the toggle modal functionality
   const onHandleToggleModal = e => {
@@ -15,14 +50,14 @@ function MainView(props) {
     if (registerButtonAction === "Submit") {
       axios
         .post("http://localhost:7700/parity/hgo/api/register", {
-          accountID: "HGO-10001",
-          accountName: "XYZ Company",
-          address: "New York, New York",
-          type: "Cash",
-          email: "xyccompany@gmail.com",
+          accountID: "HGO-100XX",
+          accountName,
+          address,
+          type,
+          email,
           phoneNumber: "1002-234-9800",
-          hauler_grower: "Hauler",
-          password: "54321"
+          grower_hauler,
+          password
         })
         .then(response => {
           console.log(response.data);
@@ -54,6 +89,7 @@ function MainView(props) {
         <Register
           isModalOpen={isModalOpen}
           onHandleToggleModal={onHandleToggleModal}
+          handleOnInputChange={handleOnInputChange}
         />
       </div>
     </>

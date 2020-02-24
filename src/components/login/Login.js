@@ -10,14 +10,8 @@ import "./Login.css";
 
 function Login(props) {
   // Initialize the states
-  // const [isModalOpen, setIsModalOpen] = useState(false);
   const [emailInput, setEmailInput] = useState("");
   const [passWordInput, setPassWordInput] = useState("");
-
-  // // Handle the toggle modal functionality
-  // const onHandleToggleModal = () => {
-  //   setIsModalOpen(!isModalOpen);
-  // };
 
   // Post call to API using Axios
   const handleLoginClick = () => {
