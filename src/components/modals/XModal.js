@@ -23,10 +23,16 @@ function XModal({
           </div>
           <ModalBody>{modalBody}</ModalBody>
           <ModalFooter>
-            <Button color="success" onClick={onHandleToggleModal}>
+            <Button
+              color="success"
+              id={buttonHappyText}
+              onClick={onHandleToggleModal}>
               {buttonHappyText}
             </Button>{" "}
-            <Button color="danger" onClick={onHandleToggleModal}>
+            <Button
+              color="danger"
+              id={buttonSadText}
+              onClick={onHandleToggleModal}>
               {buttonSadText}
             </Button>
           </ModalFooter>

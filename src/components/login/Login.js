@@ -1,25 +1,23 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 
 import axios from "axios";
 
-import { Navbar, NavbarBrand } from "reactstrap";
 import { Card, CardBody, Form, FormGroup, Input, Button } from "reactstrap";
 import { Container, Row, Col } from "reactstrap";
-
-import Register from "../register/Register";
 
 import "./Login.css";
 
 function Login(props) {
   // Initialize the states
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   const [emailInput, setEmailInput] = useState("");
   const [passWordInput, setPassWordInput] = useState("");
 
-  // Handle the toggle modal functionality
-  const onHandleToggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  // // Handle the toggle modal functionality
+  // const onHandleToggleModal = () => {
+  //   setIsModalOpen(!isModalOpen);
+  // };
 
   // Post call to API using Axios
   const handleLoginClick = () => {
@@ -40,24 +38,6 @@ function Login(props) {
 
   return (
     <>
-      <div id="navBarElemLogin">
-        <Navbar id="loginNavBar">
-          <NavbarBrand>
-            <span id="loginTitle">HGO System V1.0</span>
-          </NavbarBrand>
-          <Form inline>
-            <FormGroup>
-              <h6 id="registerFormat" onClick={onHandleToggleModal}>
-                Register
-              </h6>
-            </FormGroup>
-          </Form>
-        </Navbar>
-      </div>
-      <Register
-        isModalOpen={isModalOpen}
-        onHandleToggleModal={onHandleToggleModal}
-      />
       <div id="cardElemLogin" className="card-centered">
         <Container>
           <Row xs="3">
@@ -105,4 +85,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default withRouter(Login);

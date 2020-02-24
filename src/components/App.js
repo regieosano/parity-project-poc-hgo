@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./login/Login";
 
 import "./App.css";
 
+import MainView from "./mainview/MainView";
 import XComp from "./xcomp/XComp";
-import Login from "./login/Login";
 
 function App(props) {
   return (
     <>
       <div>
         <Router>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={MainView} />
           <Route exact path="/growerhaulerdetail" component={XComp} />
         </Router>
       </div>
