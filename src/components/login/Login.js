@@ -41,9 +41,9 @@ function Login(props) {
   return (
     <>
       <div id="navBarElemLogin">
-        <Navbar style={{ backgroundColor: "#036b1d" }} id="navbar">
+        <Navbar id="loginNavBar">
           <NavbarBrand>
-            <span id="loginTextPosition">HGO System V1.0</span>
+            <span id="loginTitle">HGO System V1.0</span>
           </NavbarBrand>
           <Form inline>
             <FormGroup>
@@ -72,13 +72,13 @@ function Login(props) {
                     <FormGroup>
                       <Input
                         type="email"
-                        placeholder="📩     Email"
+                        placeholder="📩  Email"
                         className="loginMargins"
                         onChange={e => setEmailInput(e.target.value)}
                       />
                       <Input
                         type="password"
-                        placeholder="🔑     Password"
+                        placeholder="🔑  Password"
                         className="loginMargins"
                         onChange={e => setPassWordInput(e.target.value)}
                       />

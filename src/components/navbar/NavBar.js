@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+
 import { Navbar, NavbarBrand, Form } from "reactstrap";
 import { Button, FormGroup, Input } from "reactstrap";
 
@@ -8,7 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./NavBar.css";
 
-const NavBar = ({ accountName }) => {
+const NavBar = props => {
+  const { accountName } = props;
+
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
   const industryIcon = (
     <FontAwesomeIcon icon={faIndustry} size={"2x"} color={"Cyan"} />
@@ -16,14 +20,18 @@ const NavBar = ({ accountName }) => {
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#036b1d" }} id="navbar">
+      <Navbar id="hgoNavbar">
         <NavbarBrand>
           <span id="brandTitle">
             {industryIcon}&nbsp;&nbsp;Welcome, {accountName}
           </span>
         </NavbarBrand>
         <Form inline>
-          <span>Logout</span>
+          <span id="linkMargin">
+            <Link to="/" id="logOutId">
+              Logout
+            </Link>
+          </span>
           <FormGroup>
             <Input
               type="search"

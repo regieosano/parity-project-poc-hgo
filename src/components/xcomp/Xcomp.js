@@ -7,7 +7,6 @@ import GrowerHaulerDetailView from "../grower-hauler-detail/GrowerHaulerDetailVi
 
 function XComp(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const [accountName, setAccountName] = useState("");
 
   useEffect(() => {
