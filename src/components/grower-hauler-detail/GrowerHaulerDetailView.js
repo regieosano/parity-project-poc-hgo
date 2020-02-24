@@ -11,7 +11,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
         isModalOpen={isModalOpen}
         modalBody={modalBody}
         onHandleToggleModal={onHandleToggleModal}
-        modalSize={"lg"}
+        modalSize={"xl"}
         modalId={"modalTitle"}
         modalTitle={"Grower/Hauler Detail View"}
         buttonHappyText={"Submit"}

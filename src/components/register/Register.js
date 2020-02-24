@@ -10,15 +10,6 @@ function Register({ isModalOpen, onHandleToggleModal }) {
   const modalBody = (
     <Form>
       <FormGroup>
-        <Label for="accountId">Account Id</Label>
-        <Input
-          type="text"
-          name="accountId"
-          id="accountId"
-          placeholder="Enter Account Id"
-        />
-      </FormGroup>
-      <FormGroup>
         <Label for="accountName">Account Name</Label>
         <Input
           type="text"
