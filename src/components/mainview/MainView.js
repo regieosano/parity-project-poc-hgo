@@ -8,12 +8,6 @@ import Register from "../register/Register";
 function MainView(props) {
   // Initialize states
   const [isModalOpen, setIsModalOpen] = useState(false);
-  //   const [accountName, setAccountName] = useState("");
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
-  //   const [address, setAddress] = useState("");
-  //   const [type, setType] = useState("");
-  //   const [growler_hauler, setGrowlerHauler] = useState("");
 
   let accountName = "";
   let email = "";
@@ -61,6 +55,7 @@ function MainView(props) {
         })
         .then(response => {
           console.log(response.data);
+          alert("A new MEMBER is Added.");
         })
         .catch(error => {
           alert(`There is an error - ${error.message}`);
