@@ -23,6 +23,11 @@
   background: #cecece;
 }
 
+#loginBackdrop {
+  padding: .5rem;
+  background-color: #d5e1df;
+}
+
 .loginTitle {
   text-align: center;
 }

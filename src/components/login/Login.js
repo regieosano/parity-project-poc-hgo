@@ -37,39 +37,42 @@ function Login(props) {
           <Row xs="3">
             <Col></Col>
             <Col>
-              <Card>
-                <CardBody>
-                  <div className="loginTitle">
-                    <h4>Member Login</h4>
-                  </div>
-                  <Form>
-                    <FormGroup>
-                      <Input
-                        type="email"
-                        placeholder="📩  Email"
-                        className="loginMargins"
-                        onChange={e => setEmailInput(e.target.value)}
-                      />
-                      <Input
-                        type="password"
-                        placeholder="🔑  Password"
-                        className="loginMargins"
-                        onChange={e => setPassWordInput(e.target.value)}
-                      />
-                      <Button
-                        color="success"
-                        block
-                        className="loginMargins p-2"
-                        onClick={handleLoginClick}>
-                        Login
-                      </Button>
-                    </FormGroup>
-                  </Form>
-                  <div className="forgotPassword loginTitle p-1">
-                    <p className="mt-3">Forgot Password?</p>
-                  </div>
-                </CardBody>
-              </Card>
+              <div id="loginBackdrop">
+                <Card>
+                  <CardBody>
+                    <div className="loginTitle">
+                      <h4>Member Login</h4>
+                    </div>
+                    <Form>
+                      <FormGroup>
+                        <Input
+                          type="email"
+                          placeholder="📩  Email"
+                          className="loginMargins"
+                          onChange={e => setEmailInput(e.target.value)}
+                        />
+                        <Input
+                          type="password"
+                          placeholder="🔑  Password"
+                          className="loginMargins"
+                          onChange={e => setPassWordInput(e.target.value)}
+                        />
+                        <Button
+                          color="success"
+                          block
+                          className="loginMargins p-2"
+                          onClick={handleLoginClick}
+                        >
+                          Login
+                        </Button>
+                      </FormGroup>
+                    </Form>
+                    <div className="forgotPassword loginTitle p-1">
+                      <p className="mt-3">Forgot Password?</p>
+                    </div>
+                  </CardBody>
+                </Card>
+              </div>
             </Col>
             <Col></Col>
           </Row>

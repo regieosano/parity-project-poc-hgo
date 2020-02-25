@@ -6,7 +6,11 @@ import "./GrowerHaulerDetailView.css";
 
 import XModal from "../modals/XModal";
 
-function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
+function GrowerHaulerDetailView({
+  isModalOpen,
+  onHandleToggleModal,
+  memberObject
+}) {
   const modalBody = (
     <>
       <Container>
@@ -23,7 +27,8 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
                     type="text"
                     name="accountID"
                     id="accountID"
-                    placeholder="Enter Account ID"
+                    readOnly
+                    value={memberObject.accountID}
                   />
                 </Col>
               </FormGroup>
@@ -37,7 +42,8 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
                     type="text"
                     name="accountName"
                     id="accountName"
-                    placeholder="Enter Account Name"
+                    readOnly
+                    value={memberObject.accountName}
                   />
                 </Col>
               </FormGroup>
@@ -51,7 +57,8 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
                     type="textarea"
                     name="address"
                     id="address"
-                    placeholder="Enter address"
+                    readOnly
+                    value={memberObject.address}
                   />
                 </Col>
               </FormGroup>
@@ -65,7 +72,8 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
                     type="text"
                     name="type"
                     id="type"
-                    placeholder="Enter type"
+                    readOnly
+                    value={memberObject.type}
                   />
                 </Col>
               </FormGroup>
@@ -79,7 +87,8 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="Enter email"
+                    readOnly
+                    value={memberObject.email}
                   />
                 </Col>
               </FormGroup>
@@ -93,7 +102,8 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
                     type="text"
                     name="phoneNumber"
                     id="phoneNumber"
-                    placeholder="Enter phone number"
+                    readOnly
+                    value={memberObject.phoneNumber}
                   />
                 </Col>
               </FormGroup>
@@ -102,10 +112,14 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal }) {
                   Grower/Hauler
                 </Label>
                 <Col>
-                  <Input sm={3} type="select" name="growerHauler">
-                    <option>Grower</option>
-                    <option>Hauler</option>
-                  </Input>
+                  <Input
+                    sm={3}
+                    type="text"
+                    name="growerHauler"
+                    id="growerHauler"
+                    readOnly
+                    value={memberObject.grower_hauler}
+                  />
                 </Col>
               </FormGroup>
             </Form>

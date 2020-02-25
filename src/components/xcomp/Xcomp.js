@@ -7,12 +7,16 @@ import GrowerHaulerDetailView from "../grower-hauler-detail/GrowerHaulerDetailVi
 
 function XComp(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [memberObject, setMemberObject] = useState({});
   const [accountName, setAccountName] = useState("");
 
   useEffect(() => {
     const supreme = props.location["state"];
     const accountName = supreme.majestic.member.accountName;
-    setAccountName(`${accountName}`);
+    const memberObject = supreme.majestic.member;
+    console.log(memberObject);
+    setAccountName(accountName);
+    setMemberObject(memberObject);
   }, []);
 
   const onHandleToggleModal = () => {
@@ -36,6 +40,7 @@ function XComp(props) {
             <GrowerHaulerDetailView
               isModalOpen={isModalOpen}
               onHandleToggleModal={onHandleToggleModal}
+              memberObject={memberObject}
             />
           </Row>
         </Col>

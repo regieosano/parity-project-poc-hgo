@@ -49,12 +49,11 @@ function MainView(props) {
           address,
           type,
           email,
-          phoneNumber: "1002-234-9800",
+          phoneNumber: "(002)-234-9800",
           grower_hauler,
           password
         })
         .then(response => {
-          console.log(response.data);
           alert("A new MEMBER is Added.");
         })
         .catch(error => {

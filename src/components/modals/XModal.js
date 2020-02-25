@@ -12,7 +12,8 @@ function XModal({
   modalId,
   modalBody,
   buttonHappyText,
-  buttonSadText
+  buttonSadText,
+  isValidForm
 }) {
   return (
     <>
@@ -25,14 +26,17 @@ function XModal({
           <ModalFooter>
             <Button
               color="success"
+              disabled={isValidForm}
               id={buttonHappyText}
-              onClick={onHandleToggleModal}>
+              onClick={onHandleToggleModal}
+            >
               {buttonHappyText}
             </Button>{" "}
             <Button
               color="danger"
               id={buttonSadText}
-              onClick={onHandleToggleModal}>
+              onClick={onHandleToggleModal}
+            >
               {buttonSadText}
             </Button>
           </ModalFooter>
