@@ -26,7 +26,7 @@ function XModal({
           <ModalFooter>
             <Button
               color="success"
-              disabled={isValidForm}
+              disabled={!isValidForm}
               id={buttonHappyText}
               onClick={onHandleToggleModal}
             >

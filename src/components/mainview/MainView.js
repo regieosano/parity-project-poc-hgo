@@ -8,6 +8,7 @@ import Register from "../register/Register";
 function MainView(props) {
   // Initialize states
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isValidForm, setIsValidForm] = useState(false);
 
   let accountName = "";
   let email = "";
@@ -34,6 +35,22 @@ function MainView(props) {
         type = eventValue;
       case "grower_hauler":
         grower_hauler = eventValue;
+    }
+    if (
+      accountName !== "" &&
+      email !== "" &&
+      password !== "" &&
+      address !== "" &&
+      type !== "" &&
+      grower_hauler !== ""
+    ) {
+      // set to true isValidForm
+      setIsValidForm(true);
+      console.log("valid form - true");
+    } else {
+      // set to false isValidForm
+      setIsValidForm(false);
+      console.log("valid form - false");
     }
   };
 
@@ -84,6 +101,7 @@ function MainView(props) {
           isModalOpen={isModalOpen}
           onHandleToggleModal={onHandleToggleModal}
           handleOnInputChange={handleOnInputChange}
+          isValidForm={isValidForm}
         />
       </div>
     </>

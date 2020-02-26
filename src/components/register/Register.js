@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Register.css";
 
@@ -6,8 +6,12 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 
 import XModal from "../modals/XModal";
 
-function Register({ isModalOpen, onHandleToggleModal, handleOnInputChange }) {
-  const [isValidForm, setIsValidForm] = useState(false);
+function Register({
+  isModalOpen,
+  onHandleToggleModal,
+  handleOnInputChange,
+  isValidForm
+}) {
   const modalBody = (
     <Form>
       <FormGroup>
@@ -17,7 +21,6 @@ function Register({ isModalOpen, onHandleToggleModal, handleOnInputChange }) {
           name="accountName"
           id="accountName"
           placeholder="Enter account name"
-          required
           onChange={handleOnInputChange}
         />
       </FormGroup>
