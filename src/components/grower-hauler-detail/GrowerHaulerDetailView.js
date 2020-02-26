@@ -213,8 +213,8 @@ function GrowerHaulerDetailView({
         modalSize={"xl"}
         modalId={"modalTitle"}
         modalTitle={"Grower/Hauler Detail View"}
-        buttonHappyText={"Submit"}
-        buttonSadText={"Cancel"}
+        buttonHappyText={"None"}
+        buttonSadText={"Close"}
       />
     </>
   );

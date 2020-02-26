@@ -38,7 +38,7 @@ function Login(props) {
             <Col></Col>
             <Col>
               <div id="loginBackdrop">
-                <Card>
+                <Card id="cardLogin">
                   <CardBody>
                     <div className="loginTitle">
                       <h4>Member Login</h4>

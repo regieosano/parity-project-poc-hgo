@@ -24,14 +24,16 @@ function XModal({
           </div>
           <ModalBody>{modalBody}</ModalBody>
           <ModalFooter>
-            <Button
-              color="success"
-              disabled={!isValidForm}
-              id={buttonHappyText}
-              onClick={onHandleToggleModal}
-            >
-              {buttonHappyText}
-            </Button>{" "}
+            {buttonHappyText === "Submit" && (
+              <Button
+                color="success"
+                disabled={isValidForm}
+                id={buttonHappyText}
+                onClick={onHandleToggleModal}
+              >
+                {buttonHappyText}
+              </Button>
+            )}
             <Button
               color="danger"
               id={buttonSadText}

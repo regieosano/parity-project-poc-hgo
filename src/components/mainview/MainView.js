@@ -8,49 +8,35 @@ import Register from "../register/Register";
 function MainView(props) {
   // Initialize states
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isValidForm, setIsValidForm] = useState(false);
-
-  let accountName = "";
-  let email = "";
-  let password = "";
-  let address = "";
-  let type = "";
-  let grower_hauler = "";
+  const [accountName, setAccountName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [type, setType] = useState("");
+  const [grower_hauler, setGrowerHauler] = useState("Grower");
 
   const handleOnInputChange = e => {
     const eventName = e.target.name;
     const eventValue = e.target.value;
     switch (eventName) {
       case "accountName":
-        accountName = eventValue;
+        setAccountName(eventValue);
         break;
       case "email":
-        email = eventValue;
+        setEmail(eventValue);
         break;
       case "password":
-        password = eventValue;
+        setPassword(eventValue);
+        break;
       case "address":
-        address = eventValue;
+        setAddress(eventValue);
+        break;
       case "type":
-        type = eventValue;
+        setType(eventValue);
+        break;
       case "grower_hauler":
-        grower_hauler = eventValue;
-    }
-    if (
-      accountName !== "" &&
-      email !== "" &&
-      password !== "" &&
-      address !== "" &&
-      type !== "" &&
-      grower_hauler !== ""
-    ) {
-      // set to true isValidForm
-      setIsValidForm(true);
-      console.log("valid form - true");
-    } else {
-      // set to false isValidForm
-      setIsValidForm(false);
-      console.log("valid form - false");
+        setGrowerHauler(eventValue);
+        break;
     }
   };
 
@@ -101,7 +87,13 @@ function MainView(props) {
           isModalOpen={isModalOpen}
           onHandleToggleModal={onHandleToggleModal}
           handleOnInputChange={handleOnInputChange}
-          isValidForm={isValidForm}
+          isValidForm={
+            accountName.length === 0 ||
+            email.length === 0 ||
+            type.length === 0 ||
+            address.length === 0 ||
+            password.length === 0
+          }
         />
       </div>
     </>
