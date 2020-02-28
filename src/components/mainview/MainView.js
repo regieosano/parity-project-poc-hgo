@@ -2,43 +2,23 @@ import React, { useState } from "react";
 import { Form, FormGroup, Navbar, NavbarBrand } from "reactstrap";
 import axios from "axios";
 
+import { useInputForm } from "../../hooks/useInputForm";
+
 import Login from "../login/Login";
 import Register from "../register/Register";
 
 function MainView(props) {
+  const [variables, handleOnInputChange] = useInputForm({
+    accountName: "",
+    email: "",
+    password: "",
+    address: "",
+    type: "",
+    grower_hauler: "Grower"
+  });
+
   // Initialize states
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [accountName, setAccountName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [address, setAddress] = useState("");
-  const [type, setType] = useState("");
-  const [grower_hauler, setGrowerHauler] = useState("Grower");
-
-  const handleOnInputChange = e => {
-    const eventName = e.target.name;
-    const eventValue = e.target.value;
-    switch (eventName) {
-      case "accountName":
-        setAccountName(eventValue);
-        break;
-      case "email":
-        setEmail(eventValue);
-        break;
-      case "password":
-        setPassword(eventValue);
-        break;
-      case "address":
-        setAddress(eventValue);
-        break;
-      case "type":
-        setType(eventValue);
-        break;
-      case "grower_hauler":
-        setGrowerHauler(eventValue);
-        break;
-    }
-  };
 
   // Handle the toggle modal functionality
   const onHandleToggleModal = e => {
@@ -48,13 +28,13 @@ function MainView(props) {
       axios
         .post("http://localhost:7700/parity/hgo/api/register", {
           accountID: "HGO-100XX",
-          accountName,
-          address,
-          type,
-          email,
+          accountName: variables.accountName,
+          address: variables.address,
+          type: variables.type,
+          email: variables.email,
           phoneNumber: "(002)-234-9800",
-          grower_hauler,
-          password
+          grower_hauler: variables.grower_hauler,
+          password: variables.password
         })
         .then(response => {
           alert("A new MEMBER is Added.");
@@ -88,11 +68,11 @@ function MainView(props) {
           onHandleToggleModal={onHandleToggleModal}
           handleOnInputChange={handleOnInputChange}
           isValidForm={
-            accountName.length === 0 ||
-            email.length === 0 ||
-            type.length === 0 ||
-            address.length === 0 ||
-            password.length === 0
+            variables.accountName.length === 0 ||
+            variables.email.length === 0 ||
+            variables.type.length === 0 ||
+            variables.address.length === 0 ||
+            variables.password.length === 0
           }
         />
       </div>

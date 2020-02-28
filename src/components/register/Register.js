@@ -66,7 +66,11 @@ function Register({
       </FormGroup>
       <FormGroup>
         <Label for="growerHauler">Grower/Hauler</Label>
-        <Input type="select" name="growerHauler" onChange={handleOnInputChange}>
+        <Input
+          type="select"
+          name="grower_hauler"
+          onChange={handleOnInputChange}
+        >
           <option>Grower</option>
           <option>Hauler</option>
         </Input>
