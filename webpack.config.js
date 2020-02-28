@@ -53,6 +53,7 @@ module.exports = {
 
   // Set dev-server configuration
   devServer: {
+    disableHostCheck: true,
     inline: true,
     contentBase: "./dist",
     port: 5500,

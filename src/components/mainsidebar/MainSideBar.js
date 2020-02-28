@@ -84,8 +84,12 @@ function MainSideBar({ onHandleToggleModal }) {
               <span className="dropDownText">USERS</span>
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem onClick={onHandleToggleModal}>Grower</DropdownItem>
-              <DropdownItem>Hauler</DropdownItem>
+              <DropdownItem onClick={onHandleToggleModal} name="growers">
+                Grower
+              </DropdownItem>
+              <DropdownItem onClick={onHandleToggleModal} name="haulers">
+                Hauler
+              </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </li>
