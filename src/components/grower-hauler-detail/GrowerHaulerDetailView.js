@@ -6,11 +6,7 @@ import "./GrowerHaulerDetailView.css";
 
 import XModal from "../modals/XModal";
 
-function GrowerHaulerDetailView({
-  isModalOpen,
-  onHandleToggleModal,
-  memberObject
-}) {
+function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
   const modalBody = (
     <>
       <Container>
@@ -28,7 +24,7 @@ function GrowerHaulerDetailView({
                     name="accountID"
                     id="accountID"
                     readOnly
-                    value={memberObject.accountID}
+                    // value={hgoUser.accountID}
                   />
                 </Col>
               </FormGroup>
@@ -43,7 +39,7 @@ function GrowerHaulerDetailView({
                     name="accountName"
                     id="accountName"
                     readOnly
-                    value={memberObject.accountName}
+                    // value={hgoUser.accountName}
                   />
                 </Col>
               </FormGroup>
@@ -58,7 +54,7 @@ function GrowerHaulerDetailView({
                     name="address"
                     id="address"
                     readOnly
-                    value={memberObject.address}
+                    // value={hgoUser.address}
                   />
                 </Col>
               </FormGroup>
@@ -73,7 +69,7 @@ function GrowerHaulerDetailView({
                     name="type"
                     id="type"
                     readOnly
-                    value={memberObject.type}
+                    // value={hgoUser.type}
                   />
                 </Col>
               </FormGroup>
@@ -88,7 +84,7 @@ function GrowerHaulerDetailView({
                     name="email"
                     id="email"
                     readOnly
-                    value={memberObject.email}
+                    // value={hgoUser.email}
                   />
                 </Col>
               </FormGroup>
@@ -103,7 +99,7 @@ function GrowerHaulerDetailView({
                     name="phoneNumber"
                     id="phoneNumber"
                     readOnly
-                    value={memberObject.phoneNumber}
+                    // value={hgoUser.phoneNumber}
                   />
                 </Col>
               </FormGroup>
@@ -118,7 +114,7 @@ function GrowerHaulerDetailView({
                     name="growerHauler"
                     id="growerHauler"
                     readOnly
-                    value={memberObject.grower_hauler}
+                    // value={hgoUser.grower_hauler}
                   />
                 </Col>
               </FormGroup>

@@ -11,25 +11,32 @@ function XComp(props) {
     isGrowerHaulerDetailModalOpen,
     setIsGrowerHaulerDetailModalOpen
   ] = useState(false);
-  const [mainTitle, setMainTitle] = useState("");
-  const [isUsersModalOpen, setIsUsersModalOpen] = useState(false);
-  const [memberObject, setMemberObject] = useState({});
+  const [mainTitle, setMainTitle] = useState("xxx");
+  const [isUsersListModalOpen, setIsUsersListModalOpen] = useState(false);
+  // const [memberObject, setMemberObject] = useState({});
   const [hgoArrayUsers, setHGOArrayUsers] = useState([]);
   const [accountName, setAccountName] = useState("");
+  const [showGHDetailModal, setShowGHDetailModal] = useState(false);
 
   useEffect(() => {
     const supreme = props.location["state"];
     const hgoUsers = supreme.majestic.data;
     const accountName = supreme.majestic.member.accountName;
-    const memberObject = supreme.majestic.member;
+    // const memberObject = supreme.majestic.member;
     setHGOArrayUsers(hgoUsers);
     setAccountName(accountName);
-    setMemberObject(memberObject);
+    // setMemberObject(memberObject);
   }, []);
 
   const onHandleToggleModal = e => {
     setMainTitle(e.target.name);
-    setIsUsersModalOpen(!isUsersModalOpen);
+    setShowGHDetailModal(false);
+    setIsUsersListModalOpen(!isUsersListModalOpen);
+  };
+
+  const onSelectUserFromList = () => {
+    setIsUsersListModalOpen(!isUsersListModalOpen);
+    setShowGHDetailModal(!showGHDetailModal);
   };
 
   return (
@@ -47,15 +54,15 @@ function XComp(props) {
         <Col>
           <Row xs="1">
             <UsersListComponent
-              isModalOpen={isUsersModalOpen}
+              isModalOpen={isUsersListModalOpen}
               modalTitle={mainTitle}
               onHandleToggleModal={onHandleToggleModal}
+              onSelectUserFromList={onSelectUserFromList}
               hgoArrayUsers={hgoArrayUsers}
             />
             <GrowerHaulerDetailView
-              isModalOpen={false}
+              isModalOpen={showGHDetailModal}
               onHandleToggleModal={onHandleToggleModal}
-              memberObject={memberObject}
             />
           </Row>
         </Col>

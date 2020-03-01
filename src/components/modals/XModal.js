@@ -15,6 +15,8 @@ function XModal({
   buttonSadText,
   isValidForm
 }) {
+  // const xModalTitle = modalTitle || "xxx";
+
   return (
     <>
       <div>
@@ -29,16 +31,14 @@ function XModal({
                 color="success"
                 disabled={isValidForm}
                 id={buttonHappyText}
-                onClick={onHandleToggleModal}
-              >
+                onClick={onHandleToggleModal}>
                 {buttonHappyText}
               </Button>
             )}
             <Button
               color="danger"
               id={buttonSadText}
-              onClick={onHandleToggleModal}
-            >
+              onClick={onHandleToggleModal}>
               {buttonSadText}
             </Button>
           </ModalFooter>

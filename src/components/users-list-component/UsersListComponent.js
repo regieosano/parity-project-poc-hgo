@@ -1,40 +1,58 @@
 import React, { useState } from "react";
 import XModal from "../modals/XModal";
 
+import GrowerHaulerDetailView from "../grower-hauler-detail/GrowerHaulerDetailView";
+
+import "./UsersListComponent.css";
+
 function UsersListComponent({
   isModalOpen,
   modalTitle,
-  modalBody,
   onHandleToggleModal,
+  onSelectUserFromList,
   hgoArrayUsers
 }) {
-  const mainTitle = modalTitle.toUpperCase();
+  const mainTitle = modalTitle;
 
-  //   const [hgoUsers, setHGOUsers] = useState([]);
-  let hgoUsers = [];
+  const [hgoUser, setHGOUser] = useState({});
+
+  // const [showGHDetailModal, setShowGHDetailModal] = useState(false);
+
+  let users = [];
+
+  const handleSelectedUser = e => {
+    const index = e.target.id;
+    const userSelected = users[index];
+    setShowGHDetailModal(true);
+    setHGOUser(userSelected);
+  };
 
   switch (mainTitle) {
-    case "GROWERS":
-      hgoUsers = hgoArrayUsers.filter(
+    case "growers":
+      users = hgoArrayUsers.filter(
         u => u.grower_hauler.toLowerCase() === "grower"
       );
-      console.log(hgoUsers);
+
       break;
 
-    case "HAULERS":
-      hgoUsers = hgoArrayUsers.filter(
+    case "haulers":
+      users = hgoArrayUsers.filter(
         u => u.grower_hauler.toLowerCase() === "hauler"
       );
-      console.log(hgoUsers);
+
       break;
   }
 
   const dataBody = (
     <>
       <ul>
-        {hgoUsers.map((u, index) => {
+        {users.map((u, index) => {
           return (
-            <li key={index} className="ml-2">
+            <li
+              key={index}
+              className="ml-2 usersHGOList"
+              id={index}
+              onClick={onSelectUserFromList}>
               {u.accountName}
             </li>
           );
@@ -49,7 +67,7 @@ function UsersListComponent({
         <XModal
           isModalOpen={isModalOpen}
           onHandleToggleModal={onHandleToggleModal}
-          modalSize={"xl"}
+          modalSize={"lg"}
           modalBody={dataBody}
           modalId={"modalTitle"}
           modalTitle={mainTitle}
