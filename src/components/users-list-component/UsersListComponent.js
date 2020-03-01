@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import XModal from "../modals/XModal";
 
-import GrowerHaulerDetailView from "../grower-hauler-detail/GrowerHaulerDetailView";
-
 import "./UsersListComponent.css";
 
 function UsersListComponent({

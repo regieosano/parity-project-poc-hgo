@@ -10,7 +10,6 @@ function XComp(props) {
   const [hgoUser, setHGOUser] = useState({});
   const [mainTitle, setMainTitle] = useState("");
   const [isUsersListModalOpen, setIsUsersListModalOpen] = useState(false);
-  // const [memberObject, setMemberObject] = useState({});
   const [hgoArrayUsers, setHGOArrayUsers] = useState([]);
   const [accountName, setAccountName] = useState("");
   const [showGHDetailModal, setShowGHDetailModal] = useState(false);
@@ -19,10 +18,8 @@ function XComp(props) {
     const supreme = props.location["state"];
     const hgoUsers = supreme.majestic.data;
     const accountName = supreme.majestic.member.accountName;
-    // const memberObject = supreme.majestic.member;
     setHGOArrayUsers(hgoUsers);
     setAccountName(accountName);
-    // setMemberObject(memberObject);
   }, []);
 
   const onHandleToggleModal = e => {

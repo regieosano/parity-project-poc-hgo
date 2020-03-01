@@ -15,8 +15,6 @@ function XModal({
   buttonSadText,
   isValidForm
 }) {
-  // const xModalTitle = modalTitle || "xxx";
-
   return (
     <>
       <div>
