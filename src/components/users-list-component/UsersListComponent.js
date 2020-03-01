@@ -8,7 +8,8 @@ function UsersListComponent({
   modalTitle,
   onHandleToggleModal,
   onSelectUserFromList,
-  hgoArrayUsers
+  hgoArrayUsers,
+  loggedInUser
 }) {
   const mainTitle = modalTitle.toUpperCase();
 
@@ -17,14 +18,18 @@ function UsersListComponent({
   switch (mainTitle) {
     case "GROWERS":
       users = hgoArrayUsers.filter(
-        u => u.grower_hauler.toLowerCase() === "grower"
+        u =>
+          u.grower_hauler.toLowerCase() === "grower" &&
+          u.accountName !== loggedInUser.accountName
       );
 
       break;
 
     case "HAULERS":
       users = hgoArrayUsers.filter(
-        u => u.grower_hauler.toLowerCase() === "hauler"
+        u =>
+          u.grower_hauler.toLowerCase() === "hauler" &&
+          u.accountName !== loggedInUser.accountName
       );
 
       break;

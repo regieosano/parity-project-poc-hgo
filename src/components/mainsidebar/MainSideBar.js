@@ -90,6 +90,9 @@ function MainSideBar({ onHandleToggleModal }) {
               <DropdownItem onClick={onHandleToggleModal} name="haulers">
                 Hauler
               </DropdownItem>
+              <DropdownItem onClick={onHandleToggleModal} name="myrecord">
+                My Record
+              </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </li>

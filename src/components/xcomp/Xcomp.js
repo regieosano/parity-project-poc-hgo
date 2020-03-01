@@ -11,6 +11,7 @@ function XComp(props) {
   const [mainTitle, setMainTitle] = useState("");
   const [isUsersListModalOpen, setIsUsersListModalOpen] = useState(false);
   const [hgoArrayUsers, setHGOArrayUsers] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState([]);
   const [accountName, setAccountName] = useState("");
   const [showGHDetailModal, setShowGHDetailModal] = useState(false);
 
@@ -18,20 +19,32 @@ function XComp(props) {
     const supreme = props.location["state"];
     const hgoUsers = supreme.majestic.data;
     const accountName = supreme.majestic.member.accountName;
+    const loggedInUser = supreme.majestic.member;
     setHGOArrayUsers(hgoUsers);
     setAccountName(accountName);
+    setLoggedInUser(loggedInUser);
   }, []);
 
   const onHandleToggleModal = e => {
-    if (!showGHDetailModal) {
-      setMainTitle(e.target.name);
+    const passedName = e.target.name;
+    if (!showGHDetailModal && passedName !== "myrecord") {
+      setMainTitle(passedName);
     }
-    setShowGHDetailModal(false);
-    setIsUsersListModalOpen(!isUsersListModalOpen);
+    if (passedName === "myrecord") {
+      setHGOUser(loggedInUser);
+      toggleViewModals();
+    } else {
+      setShowGHDetailModal(false);
+      setIsUsersListModalOpen(!isUsersListModalOpen);
+    }
   };
 
   const onSelectUserFromList = hgoUser => {
     setHGOUser(hgoUser);
+    toggleViewModals();
+  };
+
+  const toggleViewModals = () => {
     setIsUsersListModalOpen(!isUsersListModalOpen);
     setShowGHDetailModal(!showGHDetailModal);
   };
@@ -56,6 +69,7 @@ function XComp(props) {
               onHandleToggleModal={onHandleToggleModal}
               onSelectUserFromList={onSelectUserFromList}
               hgoArrayUsers={hgoArrayUsers}
+              loggedInUser={loggedInUser}
             />
             <GrowerHaulerDetailView
               isModalOpen={showGHDetailModal}
