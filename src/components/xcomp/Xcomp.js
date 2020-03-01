@@ -7,11 +7,8 @@ import GrowerHaulerDetailView from "../grower-hauler-detail/GrowerHaulerDetailVi
 import UsersListComponent from "../users-list-component/UsersListComponent";
 
 function XComp(props) {
-  const [
-    isGrowerHaulerDetailModalOpen,
-    setIsGrowerHaulerDetailModalOpen
-  ] = useState(false);
-  const [mainTitle, setMainTitle] = useState("xxx");
+  const [hgoUser, setHGOUser] = useState({});
+  const [mainTitle, setMainTitle] = useState("");
   const [isUsersListModalOpen, setIsUsersListModalOpen] = useState(false);
   // const [memberObject, setMemberObject] = useState({});
   const [hgoArrayUsers, setHGOArrayUsers] = useState([]);
@@ -29,12 +26,15 @@ function XComp(props) {
   }, []);
 
   const onHandleToggleModal = e => {
-    setMainTitle(e.target.name);
+    if (!showGHDetailModal) {
+      setMainTitle(e.target.name);
+    }
     setShowGHDetailModal(false);
     setIsUsersListModalOpen(!isUsersListModalOpen);
   };
 
-  const onSelectUserFromList = () => {
+  const onSelectUserFromList = hgoUser => {
+    setHGOUser(hgoUser);
     setIsUsersListModalOpen(!isUsersListModalOpen);
     setShowGHDetailModal(!showGHDetailModal);
   };
@@ -63,6 +63,7 @@ function XComp(props) {
             <GrowerHaulerDetailView
               isModalOpen={showGHDetailModal}
               onHandleToggleModal={onHandleToggleModal}
+              hgoUser={hgoUser}
             />
           </Row>
         </Col>

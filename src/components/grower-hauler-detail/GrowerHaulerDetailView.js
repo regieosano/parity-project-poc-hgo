@@ -24,7 +24,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
                     name="accountID"
                     id="accountID"
                     readOnly
-                    // value={hgoUser.accountID}
+                    value={hgoUser.accountID}
                   />
                 </Col>
               </FormGroup>
@@ -39,7 +39,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
                     name="accountName"
                     id="accountName"
                     readOnly
-                    // value={hgoUser.accountName}
+                    value={hgoUser.accountName}
                   />
                 </Col>
               </FormGroup>
@@ -54,7 +54,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
                     name="address"
                     id="address"
                     readOnly
-                    // value={hgoUser.address}
+                    value={hgoUser.address}
                   />
                 </Col>
               </FormGroup>
@@ -69,7 +69,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
                     name="type"
                     id="type"
                     readOnly
-                    // value={hgoUser.type}
+                    value={hgoUser.type}
                   />
                 </Col>
               </FormGroup>
@@ -84,7 +84,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
                     name="email"
                     id="email"
                     readOnly
-                    // value={hgoUser.email}
+                    value={hgoUser.email}
                   />
                 </Col>
               </FormGroup>
@@ -99,7 +99,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
                     name="phoneNumber"
                     id="phoneNumber"
                     readOnly
-                    // value={hgoUser.phoneNumber}
+                    value={hgoUser.phoneNumber}
                   />
                 </Col>
               </FormGroup>
@@ -114,7 +114,7 @@ function GrowerHaulerDetailView({ isModalOpen, onHandleToggleModal, hgoUser }) {
                     name="growerHauler"
                     id="growerHauler"
                     readOnly
-                    // value={hgoUser.grower_hauler}
+                    value={hgoUser.grower_hauler}
                   />
                 </Col>
               </FormGroup>

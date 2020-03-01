@@ -12,30 +12,19 @@ function UsersListComponent({
   onSelectUserFromList,
   hgoArrayUsers
 }) {
-  const mainTitle = modalTitle;
-
-  const [hgoUser, setHGOUser] = useState({});
-
-  // const [showGHDetailModal, setShowGHDetailModal] = useState(false);
+  const mainTitle = modalTitle.toUpperCase();
 
   let users = [];
 
-  const handleSelectedUser = e => {
-    const index = e.target.id;
-    const userSelected = users[index];
-    setShowGHDetailModal(true);
-    setHGOUser(userSelected);
-  };
-
   switch (mainTitle) {
-    case "growers":
+    case "GROWERS":
       users = hgoArrayUsers.filter(
         u => u.grower_hauler.toLowerCase() === "grower"
       );
 
       break;
 
-    case "haulers":
+    case "HAULERS":
       users = hgoArrayUsers.filter(
         u => u.grower_hauler.toLowerCase() === "hauler"
       );
@@ -52,7 +41,7 @@ function UsersListComponent({
               key={index}
               className="ml-2 usersHGOList"
               id={index}
-              onClick={onSelectUserFromList}>
+              onClick={() => onSelectUserFromList(u)}>
               {u.accountName}
             </li>
           );
