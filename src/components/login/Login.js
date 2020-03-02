@@ -16,7 +16,7 @@ function Login(props) {
   // Post call to API using Axios
   const handleLoginClick = () => {
     axios
-      .post("http://localhost:7700/parity/hgo/api/login", {
+      .post("https://poc-hgo-nodebackend.herokuapp.com/parity/hgo/api/login", {
         email: emailInput,
         password: passWordInput
       })
@@ -61,8 +61,7 @@ function Login(props) {
                           color="success"
                           block
                           className="loginMargins p-2"
-                          onClick={handleLoginClick}
-                        >
+                          onClick={handleLoginClick}>
                           Login
                         </Button>
                       </FormGroup>

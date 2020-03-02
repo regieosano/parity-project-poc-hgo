@@ -26,16 +26,19 @@ function MainView(props) {
     setIsModalOpen(!isModalOpen);
     if (registerButtonAction === "Submit") {
       axios
-        .post("http://localhost:7700/parity/hgo/api/register", {
-          accountID: "HGO-100XX",
-          accountName: variables.accountName,
-          address: variables.address,
-          type: variables.type,
-          email: variables.email,
-          phoneNumber: "(002)-234-9800",
-          grower_hauler: variables.grower_hauler,
-          password: variables.password
-        })
+        .post(
+          "https://poc-hgo-nodebackend.herokuapp.com/parity/hgo/api/register",
+          {
+            accountID: "HGO-100XX",
+            accountName: variables.accountName,
+            address: variables.address,
+            type: variables.type,
+            email: variables.email,
+            phoneNumber: "(002)-234-9800",
+            grower_hauler: variables.grower_hauler,
+            password: variables.password
+          }
+        )
         .then(response => {
           alert("A new MEMBER is Added.");
         })
