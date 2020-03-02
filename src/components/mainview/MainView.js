@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Navbar, NavbarBrand } from "reactstrap";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
 import { useInputForm } from "../../hooks/useInputForm";
@@ -19,12 +21,19 @@ function MainView(props) {
 
   // Initialize states
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // Icon spinner
+  const spinnerIcon = (
+    <FontAwesomeIcon icon={faSpinner} size={"2x"} color={"Cyan"} />
+  );
 
   // Handle the toggle modal functionality
   const onHandleToggleModal = e => {
     const registerButtonAction = e.target.id;
     setIsModalOpen(!isModalOpen);
     if (registerButtonAction === "Submit") {
+      setLoading(true);
       axios
         .post(
           "https://poc-hgo-nodebackend.herokuapp.com/parity/hgo/api/register",
@@ -40,6 +49,7 @@ function MainView(props) {
           }
         )
         .then(response => {
+          setLoading(false);
           alert("A new MEMBER is Added.");
         })
         .catch(error => {
@@ -64,6 +74,7 @@ function MainView(props) {
           </Form>
         </Navbar>
       </div>
+      {loading && <div>{spinnerIcon}</div>}
       <div>
         <Login />
         <Register
