@@ -1,6 +1,14 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Navbar, NavbarBrand } from "reactstrap";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+  Container,
+  Col,
+  Row,
+  Form,
+  FormGroup,
+  Navbar,
+  NavbarBrand
+} from "reactstrap";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
@@ -25,7 +33,7 @@ function MainView(props) {
 
   // Icon spinner
   const spinnerIcon = (
-    <FontAwesomeIcon icon={faSpinner} size={"2x"} color={"Cyan"} />
+    <FontAwesomeIcon icon={faCircleNotch} size={"2x"} color={"Gray"} />
   );
 
   // Handle the toggle modal functionality
@@ -50,7 +58,9 @@ function MainView(props) {
         )
         .then(response => {
           setLoading(false);
-          alert("A new MEMBER is Added.");
+          if (!loading) {
+            alert("A new MEMBER is Added.");
+          }
         })
         .catch(error => {
           alert(`There is an error - ${error.message}`);
@@ -74,8 +84,20 @@ function MainView(props) {
           </Form>
         </Navbar>
       </div>
-      {loading && <div>{spinnerIcon}</div>}
+
       <div>
+        <Container>
+          <Row>
+            <Col sm="12" md={{ size: 6, offset: 3 }}>
+              {loading && (
+                <div className="mt-12 fas fa-circle-notch fa-spin">
+                  <span>{spinnerIcon}</span>
+                </div>
+              )}
+            </Col>
+          </Row>
+        </Container>
+
         <Login />
         <Register
           isModalOpen={isModalOpen}
